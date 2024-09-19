@@ -1,0 +1,12 @@
+relationship 6c64bc66-a5c2-48ea-8d7f-5ec37d427353
+	fromColumn: FactSalesQuota.DateKey
+	toColumn: DimDate.DateKey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 5bb85fa3-7aa4-4c4d-80cf-449a4e725f58
+	fromColumn: FactSalesQuota.EmployeeKey
+	toColumn: DimEmployee.EmployeeKey
+
+	annotation PBI_IsFromSource = FS
+

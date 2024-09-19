@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1160.5277992956719,
+            "y": 525.81804814839757
+          },
+          "nodeIndex": "DimDate",
+          "nodeLineageTag": "fd113220-c86d-4141-9f54-94d4c5a58f2b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 294,
+            "y": 168.60601604946584
+          },
+          "nodeIndex": "DimEmployee",
+          "nodeLineageTag": "051eed62-06bc-4d07-be51-ec6da4f4325e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 194.60601604946584
+          },
+          "nodeIndex": "FactSalesQuota",
+          "nodeLineageTag": "1d406420-be60-43f5-9230-80c38ed1715d",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
