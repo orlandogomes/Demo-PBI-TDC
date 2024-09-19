@@ -1,0 +1,82 @@
+table FactSalesQuota
+	lineageTag: 1d406420-be60-43f5-9230-80c38ed1715d
+
+	column SalesQuotaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: d2bbb0ac-ef9b-43d3-bd1c-93d79ca53028
+		summarizeBy: count
+		sourceColumn: SalesQuotaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 559b8ad3-bf00-4d68-b80f-2b32fc919e5c
+		summarizeBy: none
+		sourceColumn: EmployeeKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7110e787-1def-45d5-a13b-cf39ce1a39b9
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 46ec58d9-59c5-4e41-8e66-c553fb021777
+		summarizeBy: sum
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ab8ab66-001b-4fc9-a462-3da6febc55af
+		summarizeBy: sum
+		sourceColumn: CalendarQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmountQuota
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 910f1c24-997e-4584-a1d9-ae1a97112a33
+		summarizeBy: sum
+		sourceColumn: SalesAmountQuota
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cdb3f8a1-d566-4bb0-8015-85120cc005a2
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSalesQuota = m
+		mode: import
+		queryGroup: Tables
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dbo_FactSalesQuota = Source{[Schema="dbo",Item="FactSalesQuota"]}[Data]
+				in
+				    dbo_FactSalesQuota
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
